@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CANERECTOR</title>
+	
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="./style.css" type="text/css" />
+</head>
+<body>
+	<div id="page">
+		<div id="logo">
+			<h1>CENTRE DE</h1>
+			<h1>DECOUPE</h1>
+			<h5>Les divisions de l'Est</h5>
+		</div>
+	
+		<div id="nav">
+			<ul id="ulNav">
+				<div id="logInUser"></div>	
+				<li><a id="division_btn">divisionData</a></li>
+				<li><a id="decoupe_btn">Decoupe</a></li>
+				<li><a id="login_btn">Login</a></li>
+			</ul>
+		</div>
+		<div class="search_box">
+			<div class="box">
+				<div class="container-1">
+					<input type="search" id="searchItem" placeholder="Search..." />
+					<button class="icon" onclick="search(event)"><i class="fa fa-search"></i></button>
+				</div>
+			</div>
+		</div>
+		<div id="content">
+			<div id="list_container">
+				<div id="list_categories_Name_container"></div>
+				<div id="list_items_container"></div>
+			</div>
+
+			<div id="divisions_container">
+				<div id="list_divisions_container"></div>
+				
+				<div id="single_division_container">
+					<input id="division_id" value=0 type="hidden" ></input>
+					<div id="PeriodSelector"><select type="text" id="periodOption" onchange="showDivisionDetail()"></select></div>
+					<div id="single_division_container_detail"></div>
+					<div id="single_division_container_detailYTD"></div>
+					<div id="single_division_container_trending"></div>
+				</div>
+			</div>
+			<div id="decoupe_container">
+				<h1>Soumission pour decoupe</h1>
+				<div id="Donne">
+					<div class="block" id="thicknessSelector"><label for="thicknessOption">Thickness</label><select type="text" id="thicknessOption" onchange=""></select></div>
+					<div class="block" id="materialSelector"><label for="materialOption">Material</label><select type="text" id="materialOption" onchange=""></select></div>
+					<div class="block" id="quantitySelector"><label for="quantity">Quantity</label><input type="number" id="quantity" onchange=""/></div>
+					<div id="dim">
+						<div class="block" id="xbyyInput">
+							<label for="dim_x">Dim. X (inch)</label><input type="number" id="dim_x" onchange="disableInput()"/><button onclick="clearInput(`dim_x`)">clear</button></br>
+							<label for="dim_y">Dim. Y (inch)</label><input type="number" id="dim_y" onchange="disableInput()"/><button onclick="clearInput(`dim_y`)">clear</button>
+						</div>
+						<div class="block" id="weightInput"><label for="weight">Weight (lbs.)</label><input type="number" id="weight" onchange="disableInput()"/><button onclick="clearInput(`weight`)">clear</button></div>
+						<div class="block" id="areaInput"><label for="area">Surface (sqft)</label><input type="number" id="area" onchange="disableInput()"/><button onclick="clearInput(`area`)">clear</button></div>
+					</div>
+						<button class="create" onclick="calculatePrice()">Calculate</button>
+					<div>
+						<div class="separator"></div>
+						<div class="block"><label>Material(Unit):</label><div class="price_answer" id="matl_weight"></div></div>
+						<div class="separator"></div>
+						<div class="block"><label>Labour (Unit):</label><div class="price_answer"  id="decoupe_price"></div></div>
+						<div class="separator"></div>
+						<div class="block"><label>Total (Unit):</label><div class="price_answer"  id="total_unit_price"></div></div>
+						<div class="block"><label>Total (All):</label><div class="price_answer"  id="total_all_price"></div></div>
+						<button class="create" onclick="addToQuote()">Insert</button>
+					</div>
+				</div>
+				<div id="cart">
+					
+				</div>
+				
+			</div>
+			<div id="decoupe_container_original">
+				<h1>Soumission pour decoupe</h1>
+				<div class="block" id="thicknessSelector"><label for="thicknessOption">Thickness</label><select type="text" id="thicknessOption" onchange=""></select></div>
+				<div class="block" id="materialSelector"><label for="materialOption">Material</label><select type="text" id="materialOption" onchange=""></select></div>
+				<div class="block" id="quantitySelector"><label for="quantity">Quantity</label><input type="number" id="quantity" onchange=""></select></div>
+				<div class="block" id="plongeSelector"><label for="plonge">Nbre Plonge</label><input type="number" id="plonge" onchange=""></select></div>
+				<div class="block" id="linearSelector"><label for="linear">Dec.Lineaire</label><input type="number" id="linear" onchange=""></select></div>
+				<div class="block" id="areaSelector"><label for="area">Surface</label><input type="number" id="area" onchange=""></select></div>
+				<button onclick="calculatePrice()">Calculate</button>
+				<div id="matl_weight"></div>
+				<div id="decoupe_price"></div>
+				<button onclick="calculatePrice()">Insert</button>
+			</div>
+			<div id="new_divisionData_container">
+				<div class="block"><label>Division:</label><select type="text" id="new_divisionData_division"></select></div>
+				<div class="block"><label>Ref.Month:</label><select type="text" id="new_divisionData_refPeriod"></select></div>
+				<button class="new" onclick="showNewPeriod(event)">New Period</button>
+				<div class="separator"></div>
+				<div class="block"><label>Total Sales:</label><input type="number" id="new_divisionData_totalSales"/></div>
+				<div class="block"><label>Gross Margin:</label><input type="number" id="new_divisionData_grossMargin"/></div>
+				<div class="block"><label>Net profit:</label><input type="number" id="new_divisionData_netProfit"/></div>
+				<div class="separator"></div>
+				<div class="block"><label>Order Booked:</label><input type="number" id="new_divisionData_orderBooked"/></div>
+				<div class="block"><label>Backlog:</label><input type="number" id="new_divisionData_backlog"/></div>
+				<div class="separator"></div>
+				<div class="block"><label>Inventory:</label><input type="number" id="new_divisionData_inventory"/></div>	
+				<div class="separator"></div>
+				<div class="block"><label>Quote:</label><input type="number" id="new_divisionData_quote"/></div>		
+				<div class="separator"></div>
+				<button class="create" onclick="createDivisionData(event)">Create</button>
+			</div>
+			<div id="new_period_container">
+				<div class="block"><label>Year</label><input type="text" id="new_period_year"></div>
+				<div class="block"><label>Month</label><select id="new_period_month"></select></div>
+				<button class="create" onclick="createNewPeriod(event)">Create</button>
+			</div>
+			<div id="login_container">
+				<div class="separator"></div>
+				<div class="block"><label>username:</label><input type="text" id="username"/></div>
+				<div class="separator"></div>
+				<div class="block"><label>password:</label><input type="password" id="password"/></div>
+				<button class="create" onclick="login(event)">Login</button>
+			</div>
+
+		<div id="footer"></div>
+	</div>
+</body>
+</html>
+<script src="cookies.js"></script>
+<script src="user.js"></script>
+<script src="division.js"></script>
+<script src="decoupe2.js"></script>
+<script src="javascript.js"></script>

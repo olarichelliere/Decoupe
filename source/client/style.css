@@ -1,0 +1,413 @@
+/*
+* multi-line comment
+*/
+@font-face {
+  font-family: 'minstrelposterwhgregular';
+  src: url('./font/MINSPSW_-webfont.eot');
+  src: url('./font/MINSPSW_-webfont.eot?#iefix') format('embedded-opentype'),
+       url('./font/MINSPSW_-webfont.woff2') format('woff2'),
+       url('./font/MINSPSW_-webfont.woff') format('woff'),
+       url('./font/MINSPSW_-webfont.ttf') format('truetype'),
+       url('./font/MINSPSW_-webfont.svg#minstrelposterwhgregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'icon-worksregular';
+  src: url('./font/icon-works-webfont.eot');
+  src: url('./font/icon-works-webfont.eot?#iefix') format('embedded-opentype'),
+       url('./font/icon-works-webfont.woff') format('woff'),
+       url('./font/icon-works-webfont.ttf') format('truetype'),
+       url('./font/icon-works-webfont.svg#icon-worksregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+*{
+  box-sizing: border-box;
+}
+
+h5{
+font-family: 'discoregular';
+font-size: 18px;
+margin-top: -3px;
+}
+
+a{
+color: black;
+text-decoration: none;
+}
+
+a:hover,a:active{ 
+  text-decoration: none;
+ }
+
+body{
+font-family: arial; 
+line-height: 1.2em; 
+width: 100%;
+margin: 0; 
+background: white;
+}
+
+#page{ 
+margin: 20px;
+}
+
+
+#logo{
+width: 300px;
+height: 40px;
+text-align: right;
+margin-top: 5px;
+font-family: georgia;
+float: left;
+}
+
+#logo h1{
+/* vertical-align: text-bottom; */
+font-family: 'Arial Black';
+font-size: 36px;
+line-height: 30px;
+color: darkblue;
+margin: 0;
+  
+}
+#logo h5{
+  color: green;
+  font-weight: bold;
+}
+
+#nav{
+position: absolute;
+top: 10pt;
+right: 10pt;
+text-align: center;
+text-align: right;
+float: right; 
+
+}
+#nav ul{
+  list-style-type: none;
+}
+  #nav ul li{
+    font-family: 'discoregular';
+    /* display: inline-block; */
+    height: 40px;
+    float: left;
+  }
+    #nav ul li a{
+      padding: 10px;
+      background: white;
+      color: black;
+    }
+    #nav ul li a:hover{
+      background-color: grey;
+    }
+    #nav ul li a:active{ background-color: white; }
+    
+ul li a { box-shadow: 0px 1px 1px #999; }
+
+
+#logInUser{
+ height: 20pt;
+  size: 16pt;
+}
+
+.container-1{
+  overflow: hidden;
+  width: 300px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.search_box{
+  position:absolute;
+  top:100px;
+  right:0pt;
+}
+.container-1 input#searchItem{
+
+  font-family: 'discoregular';
+  width: 300px;
+  height: 30px;
+  background: white;
+
+  font-size: 12pt;
+  float: left;
+  color: black;
+  padding-left: 15px;
+  border-radius: 0;
+
+
+}
+.container-1 input#searchItem:-ms-input-placeholder {  
+  font-family: 'discoregular';
+  color: #65737e;
+}
+.container-1 .icon{
+  background: white;
+  height: 30px;
+  width: 50px;
+  color: black;
+  opacity: 1;
+  font-size: 14pt;
+  margin-left: -50px;
+
+}
+.container-1:hover button.icon, .container-1:active button.icon, .container-1:focus button.icon{
+  background-color: darkgrey;
+  color: white;
+}
+
+.container-1:hover button.icon:hover{
+  background: lightslategray;
+}
+
+input, select{
+  width: 200px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: white;
+  padding: 6px 10px 6px 20px;
+}
+
+
+#list_categories_Name_container{
+  left: 0;
+  float: left;
+  padding: 5px;	
+}
+
+#list_categories_container{
+  left: 0;
+  float: left;
+}
+
+#decoupe_container{
+  position: absolute;
+  float: left;
+  top: 150px;
+  left: 20px;
+}
+
+
+
+#content{
+  /*
+  position: relative;
+  top: 150px;
+  left: 10px;
+  width: 100%;
+  */
+} 
+
+#content a{
+  color: black;
+}
+
+.center {
+  margin: auto;
+  width: 100%;
+}
+
+#list_items_container{
+  float: left;
+  top: 0;
+  left: 350px;
+}
+
+.title{
+  display: inline;
+  font-size: 18px;
+  padding: 0px;
+  text-align: center;
+}
+
+.block{
+  margin:0 5px 10px;
+}
+
+
+.block label{
+  position: absolute;
+  font-weight: bold;
+  font-size: 18px;
+  vertical-align: middle;
+  width: 150px;
+  margin: 5px 5px 0 0px;
+}
+
+.block input, 
+.block textarea, 
+.block select{
+  border: 1px solid grey;
+  font-size: 16px;
+  padding: 5px;
+  margin: 5px 5px 0 150px;
+  vertical-align: middle;
+}
+.price_answer{
+  font-size: 16px;
+  padding: 5px;
+  margin: 5px 5px 0 150px;
+  vertical-align: middle;
+} 
+.separator{
+  clear: both;
+}
+
+button.create{
+  font-family: 'discoregular';
+  margin: 5px;
+  padding: 10px 40px;
+  font-size: 18px;
+  color: white;
+  background: rgb(50, 49, 49);
+  
+}
+
+button.createAdmin{
+  font-family: 'discoregular';
+  margin: 5px;
+  padding: 10px 40px;
+  font-size: 18px;
+  color: white;
+  background: rgb(206, 59, 59);
+  float: left;
+}
+
+#list_container{
+  float: left;
+}
+
+#divisions_container{float: left;}
+
+#list_divisions_container{
+
+  background-color: red;
+  width: 250px;
+  float: left;
+  height: 100%;
+  position: absolute;
+  overflow-x: hidden;
+  top: 200px;
+  left: 0px;
+
+}
+
+#single_division_container{
+  margin-left: 250px;
+  position: relative;
+  float: left;
+  margin-top: 100px;
+  /* top: 200px; */
+  left: 20px;
+}
+
+#single_division_container_detail{
+  position: relative;
+  float: left;
+  width: 400px;
+
+  margin: 50px 0 100px;
+}
+
+#single_division_container_detailYTD{
+  position: relative;
+  float: left;
+  width: 400px;
+
+  margin: 50px 0 100px;
+}
+
+#single_division_container_trending{
+  position: relative;
+  float: left;
+
+  margin: 50px 0 100px;
+}
+
+#bar_totalSales,#bar_totalSalesYTD{
+  text-align: center;
+  color: white;
+  width: 55px;
+  position: relative;
+  left: 0px;
+  background-color: darkgray;
+  z-index: -3;
+
+}
+
+#bar_grossMargin, #bar_grossMarginYTD{
+  text-align: center;
+  color: white;
+  width: 20px;
+  position: absolute;
+  left: 5px;
+  background-color: purple;
+  z-index: -2;
+}
+
+#bar_netProfit, #bar_netProfitYTD{ 
+  text-align: center;
+  color: white;
+  width: 20px;
+  position: absolute;
+  left: 30px;
+  background-color: rgb(52, 17, 179);
+  z-index: -1;
+}
+
+.bar_Negative{
+  border-radius:  0 0 5px 5px;
+}
+
+.bar_Positive{
+  border-radius:  5px 5px 0 0;
+}
+
+.bar_Zero{
+  border-bottom: solid black 1pt;
+  position: absolute;
+  width: 300px;
+  left: -20px;
+}
+
+.barTxt{
+  width: 250px;
+  height: 20px;
+  position: absolute;
+  padding: 0px 0px;
+  border-top: solid black 1pt;
+  text-align: right;
+}
+
+.barValue{
+  width: 250px;
+  height: 30px;
+  position: absolute;
+  padding: 5px 0px;
+  text-align: right;
+  font-size: 18pt;
+}
+
+.titleDiv{
+  float: left;
+  width: 300px;
+}
+
+.value_Negative{
+  margin-bottom: 0pt;
+}
+
+
+#dim{
+  border-left: red 5px solid;
+  margin-left: 10px;
+}
+
